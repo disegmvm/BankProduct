@@ -4,6 +4,9 @@ class DepositAccount extends BankProduct {
     }
 
     public void deposit(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Сумма должна быть больше нуля");
+        }
         this.balance += amount;
     }
 
