@@ -1,3 +1,5 @@
+package Bank.Products;
+
 abstract class BankProduct {
     protected String currency;
     protected double balance;

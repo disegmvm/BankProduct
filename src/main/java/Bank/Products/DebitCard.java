@@ -1,3 +1,5 @@
+package Bank.Products;
+
 class DebitCard extends BankProduct implements CardOperations {
     public DebitCard(String currency, double balance, String name) {
         super(currency, balance, name);
