@@ -5,15 +5,21 @@ class DebitCard extends BankProduct implements CardOperations {
 
     @Override
     public void deposit(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Сумма должна быть больше нуля");
+        }
         this.balance += amount;
     }
 
     @Override
     public void withdraw(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Сумма должна быть больше нуля");
+        }
         if (amount <= this.balance) {
             this.balance -= amount;
         } else {
-            throw new IllegalArgumentException("Сумма не может быть отрицательной");
+            throw new IllegalArgumentException("Сумма должна быть меньше текущего баланса");
         }
     }
 

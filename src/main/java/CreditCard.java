@@ -8,11 +8,18 @@ class CreditCard extends BankProduct implements CardOperations {
 
     @Override
     public void deposit(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Сумма должна быть больше нуля");
+        }
+        // баланс = задолженность
         this.balance -= amount;
     }
 
     @Override
     public void withdraw(double amount) {
+        if (amount <= 0) {
+            throw new IllegalArgumentException("Сумма должна быть больше нуля");
+        }
         this.balance += amount;
     }
 
@@ -22,7 +29,7 @@ class CreditCard extends BankProduct implements CardOperations {
     }
 
     public double checkDebt() {
-        double debt = this.balance * (1 + interestRate / 100);
-        return debt;
+        // задолженность с учётом процентной ставки
+        return this.balance * (1 + interestRate / 100);
     }
 }
