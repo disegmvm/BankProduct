@@ -1,3 +1,5 @@
+package Bank.Products;
+
 class DepositAccount extends BankProduct {
     public DepositAccount(String currency, double balance, String name) {
         super(currency, balance, name);

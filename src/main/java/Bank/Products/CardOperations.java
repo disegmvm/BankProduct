@@ -1,3 +1,5 @@
+package Bank.Products;
+
 interface CardOperations {
     void deposit(double amount);
 

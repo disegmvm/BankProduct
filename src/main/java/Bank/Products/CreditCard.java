@@ -1,3 +1,5 @@
+package Bank.Products;
+
 class CreditCard extends BankProduct implements CardOperations {
     private double interestRate;
 
